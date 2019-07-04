@@ -1,4 +1,4 @@
-console.log('preenche_selectors.js loaded');
+
 
 function apagaElementos(id){
 	for (var i = 0; i < 200; i++){

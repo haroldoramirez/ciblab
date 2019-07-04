@@ -1,4 +1,4 @@
-console.log('lista_select.js loaded');
+
 var listaSelector = new Array();
 
 //Início Origem Matéria Prima

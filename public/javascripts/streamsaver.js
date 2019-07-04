@@ -1,4 +1,4 @@
-console.log('streamsaver.js loaded');
+
 /* global location WritableStream ReadableStream define MouseEvent MessageChannel TransformStream */
 ;((name, definition) => {
   typeof module !== 'undefined'

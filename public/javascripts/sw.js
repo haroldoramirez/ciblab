@@ -1,4 +1,4 @@
-console.log('sw.js loaded');
+
 /* global self ReadableStream Response */
 
 const map = new Map()

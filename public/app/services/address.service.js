@@ -9,4 +9,10 @@ angular.module('ciblab')
             getFiltroUsuarios: {method: 'GET', url: 'usuarios/filtro/:filtro', isArray: true},
             getAutenticado: {method: 'GET', url: 'current', isArray: false}
         });
-    }]);
+    }])    /*Aplicacao AGIL*/
+   .service('Formulario',['$resource',
+   function($resource){
+       return $resource('formulario/:id', {}, {
+           getForm: {method: 'GET', url: 'formulario/todos', isArray: true}
+       });
+   }]);

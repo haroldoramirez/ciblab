@@ -1,4 +1,4 @@
-console.log('arquivo.js loaded');
+
 //vetor utilizado para printar a linha na tabela
 var vetor_linha = new Array();
 

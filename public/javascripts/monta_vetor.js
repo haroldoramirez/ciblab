@@ -1,4 +1,4 @@
-console.log('monta_vetor.js loaded');
+
 function preencheVetor(vetor){
 	var no_mercado = document.getElementById("mercado");
 	var opt_mercado = no_mercado.options[no_mercado.selectedIndex].text;

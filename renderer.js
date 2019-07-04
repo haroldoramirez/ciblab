@@ -1,7 +1,7 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
-console.log('Carregou o index.html');
+//console.log('Carregou o index.html');
 
 /*
 let myNotification = new Notification('Título', {

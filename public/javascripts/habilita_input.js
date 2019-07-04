@@ -1,4 +1,4 @@
-console.log('habilita_input.js loaded');
+
 function habilitaCampo(){
     var div = document.getElementById("biogas");
     var amostras = div.getElementsByTagName("input");

@@ -1,4 +1,4 @@
-console.log('valida_campos_select.js loaded');
+
 //varrer toda a página buscando selects para verificação
 function validaSelect(){
 	if(document.form_elementos.mercado.value == 'controle'){

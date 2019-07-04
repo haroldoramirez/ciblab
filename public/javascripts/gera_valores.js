@@ -1,1 +1,0 @@
-console.log('gera_valores.js loaded');

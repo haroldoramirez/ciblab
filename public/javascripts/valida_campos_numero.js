@@ -1,4 +1,4 @@
-console.log('valida_campos_numeros.js loaded');
+
 
 function validaNumero(campo){
 	if(isNaN(campo.value)){
