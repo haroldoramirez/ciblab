@@ -1,85 +1,121 @@
-angular.module('ciblab')
-    .controller('cadastro.controller', function ($scope, Formulario, toastr) {
+angular.module('ciblab').controller('cadastro.controller', function ($scope, Formulario, toastr) {
 
-        // Handle vendor prefixes.
+        var diretorio = 'ciblab';
+        var nomeArquivo = 'arquivo-teste.txt';
+        var conteudo = '';
+
+        // Allow for vendor prefixes. - SOLICITA A COTA
         window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+        window.directoryEntry = window.directoryEntry || window.webkitDirectoryEntry;
 
-        // Handle errors
-        function errorHandler(e) {
-            var msg = '';
-            switch (e.code) {
-                case FileError.QUOTA_EXCEEDED_ERR:
-                    msg = 'QUOTA_EXCEEDED_ERR';
-                    break;
-                case FileError.NOT_FOUND_ERR:
-                    msg = 'NOT_FOUND_ERR';
-                    break;
-                case FileError.SECURITY_ERR:
-                    msg = 'SECURITY_ERR';
-                    break;
-                case FileError.INVALID_MODIFICATION_ERR:
-                    msg = 'INVALID_MODIFICATION_ERR';
-                    break;
-                case FileError.INVALID_STATE_ERR:
-                    msg = 'INVALID_STATE_ERR';
-                    break;
-                default:
-                    msg = 'Unknown Error';
-                    break;
-            };
-            console.log('Error: ' + msg);
-        }
-
-        // Init and write some data to a file
-        function onInitFs(fs) {
-            fs.root.getFile('log-f-api.txt', {create: true}, function(fileEntry) {
-                fileEntry.isFile === true;
-                fileEntry.name == 'log-f-api.txt';
-                fileEntry.fullPath == '/log-f-api.txt';
-                // Create a FileWriter object for our FileEntry (log.txt).
-                fileEntry.createWriter(function(fileWriter) {
-                    fileWriter.onwriteend = function(e) {
-                        console.log('Write completed.');
-                    };
-                    fileWriter.onerror = function(e) {
-                        console.log('Write failed: ' + e);
-                    };
-                    // Create a new Blob and write it to log.txt.
-                    if (!window.BlobBuilder && window.WebKitBlobBuilder)
-                        window.BlobBuilder = window.WebKitBlobBuilder; // in Chrome 12.
-                             var BlobBuilder = window.WebKitBlobBuilder || window.MozBlobBuilder;
-                    var bb = new BlobBuilder();
-                    bb.append("some stuff");
-                    console.log("bb size:"+bb.size);
-                    bb.append('put some nice text in our file....');
-                    var ourData = bb.getBlob('text/plain');
-                    fileWriter.write(ourData);
-                }, errorHandler);
-            }, errorHandler);
-        }
-
-        // start the party
-        $(function() {
-            document.getElementById('inputData').innerHTML = 'start the tests';
-            window.requestFileSystem(window.PERSISTENT, 5*1024*1024, onInitFs,errorHandler);
-        });
-
-
-        // Check for support.
-        if (window.requestFileSystem) {
-          // FileSystem Supported
-          console.log('Supported')
+        // Check for the various File API support. - VERIFICA SE O NAVEGADOR E COMPATIVEL COM A API FILESYSTEM
+        if (window.File && window.FileReader && window.FileList && window.Blob && window.requestFileSystem) {
+            // Great success! All the File APIs are supported.
+            console.log('The File APIs are fully supported in this browser.');
+            console.log(navigator.userAgent);
         } else {
-          // FileSystem Not Supported
-           console.log('Not Supported')
+            // The File APIs NOT supported.
+            alert('The File APIs are not fully supported in this browser.');
+            console.log(navigator.userAgent);
         }
 
-        let filePath = "/mnt/dados/ciblabdb.xlsx";
+        /*INICIO CORE SYSTEM DE ARQUIVOS---------------------------------------------------------------------------------------------------------------------------------*/
+        // A simple error handler - MANIPULADOR
+        function manipuladorErros(error) {
+          var message = '';
 
-        let COMMA_DELIMITER = ",";
-        let NEW_LINE_SEPARATOR = "\n";
-        let FILE_HEADER = "Data_Incubacao,Protocolo";
+        /*           switch (error.code) {
+              case FileError.SECURITY_ERR:
+              message = 'Security Error';
+              break;
+              case FileError.NOT_FOUND_ERR:
+              message = 'Not Found Error';
+              break;
+              case FileError.QUOTA_EXCEEDED_ERR:
+              message = 'Quota Exceeded Error';
+              break;
+              case FileError.INVALID_MODIFICATION_ERR:
+              message = 'Invalid Modification Error';
+              break;
+              case FileError.INVALID_STATE_ERR:
+              message = 'Invalid State Error';
+              break;
+              default:
+              message = 'Unknown Error';
+              break;
+          } */
 
+          console.log(error.message);
+        }
+
+        /*Copiar arquivo para outro diretorio*/
+        function copy(cwd, src, dest) {
+          cwd.getFile(src, {}, function(fileEntry) {
+
+            cwd.getDirectory(dest, {}, function(dirEntry) {
+              fileEntry.copyTo(dirEntry);
+            }, manipuladorErros);
+
+          }, manipuladorErros);
+        }
+
+        /*Renomear arquivo*/
+        function rename(cwd, src, newName) {
+          cwd.getFile(src, {}, function(fileEntry) {
+            fileEntry.moveTo(cwd, newName);
+          }, manipuladorErros);
+        }
+
+        /*Inicio da Funcao Sistema de Arquivos*/
+        function iniciaFS(fs) {
+
+            /*Chamadas de funcao renomar e copiar*/
+            //rename(fs.root, nomeArquivo, 'ciblab.txt');
+            //copy(fs.root, '/folder1/me.png', 'folder2/mypics/');
+
+            /* Cria Diretorio */
+            fs.root.getDirectory('Documentoslab', {create:true}, function(directoryEntry) {
+                directoryEntry.isFile = false;
+                directoryEntry.isDirectory = true;
+                directoryEntry.name = 'Documentoslab';
+                directoryEntry.fullPath = '/Documentoslab';
+
+            }, manipuladorErros);
+
+
+            /* Cria Arquivo com texto */
+            fs.root.getFile(nomeArquivo, {create: true}, function(fileEntry) {
+
+              fileEntry.isFile = true;
+              fileEntry.name = nomeArquivo;
+              //fileEntry.fullPath = path.split('/');
+
+                // Create a FileWriter object for our FileEntry (ciblab-arquivo.txt).
+                fileEntry.createWriter(function(fileWriter) {
+
+                  fileWriter.onwriteend = function(e) {
+                    console.log('Write completed.', fileWriter);
+                  };
+
+                  fileWriter.onerror = function(e) {
+                    console.log('Write failed: ' + e.toString());
+                  };
+
+                  // Create a new Blob and write it to file.txt.
+                  var contentBlob = new Blob(['Data de incubação: ', conteudo], {type: 'text/plain'});
+                  fileWriter.write(contentBlob);
+
+                }, manipuladorErros);
+            });
+
+            console.log('FILESYSTEM: ', fs);
+
+        }
+
+        /*Fim da Funcao Inicia Sistema de Arquivos*/
+        /*FIM CORE SISTEMA DE ARQUIVOS---------------------------------------------------------------------------------------------------------------------------------*/
+
+        /*INICIO CAMPOS CADASTRO-----------------------------------------------------------------------------------------------------------------------------------------*/
         /*Cria Objeto formulario*/
         $scope.formulario = {};
 
@@ -147,64 +183,20 @@ angular.module('ciblab')
             { nome: 'Cama de matrizeiro'},
             { nome: 'Capim elefante'},
         ];
+        /*FIM CAMPOS CADASTRO-------------------------------------------------------------------------------------------------------------------------------------------*/
 
-        // Init and write some data to a file
+        /*Inicio - Submit do Form*/
+        $scope.salvar = function() {
 
-        /*Submit do Form*/
-        $scope.salvar = function(fs) {
+            // Get the form data.
+            conteudo = $scope.formulario.data;
+            console.log('1 - Data de incubação: ', conteudo);
 
-            console.log($scope.formulario);
+            /* Requisição para o Sistema de Arquivos */
+            window.requestFileSystem(window.PERSISTENT, 1024*1024*5, iniciaFS, manipuladorErros); // Arquivo persistente, tamanho do FS, Inicia o FS e Erros FS
 
-/*            let fileWriter = new FileWriter(filePath + "/readme.txt") ;
-            fileWriter.open() ;
-            fileWriter.writeLine("File written at : "+new Date()) ;
-            fileWriter.writeLine("Another line") ;
-            fileWriter.close() ;*/
+      }
+      /*Fim - Submit do Form*/
 
-/*            var filename = "readme.txt";
-            var text = "Text of the file goes here.";
-            var blob = new Blob([text], {type:'text/plain'});
-            var link = document.createElement("a");
-            link.download = filename;
-            link.innerHTML = "Download File";
-            link.href = window.URL.createObjectURL(blob);
-            document.body.appendChild(link);*/
-
-/*            var fileWriter = new Writer();
-            	var text = "This is a test string";
-            	var fileName = "Test.doc";
-            	fileWriter.writeToFile("sfopera.com", text, fileName, function(err,url) {
-            		if (err) {
-            			resp.error("Write failed");
-            		} else {
-            			resp.success(url);
-            		}
-            	});*/
-
-            fs.root.getFile('log-f-api.txt', {create: true}, function(fileEntry) {
-                fileEntry.isFile === true;
-                fileEntry.name == 'log-f-api.txt';
-                fileEntry.fullPath == filePath;
-                // Create a FileWriter object for our FileEntry (log.txt).
-                fileEntry.createWriter(function(fileWriter) {
-                    fileWriter.onwriteend = function(e) {
-                        console.log('Write completed.');
-                    };
-                    fileWriter.onerror = function(e) {
-                        console.log('Write failed: ' + e);
-                    };
-                    // Create a new Blob and write it to log.txt.
-                    if (!window.BlobBuilder && window.WebKitBlobBuilder)
-                        window.BlobBuilder = window.WebKitBlobBuilder; // in Chrome 12.
-                    var bb = new BlobBuilder();
-                    bb.append("some stuff");
-                    console.log("bb size:"+bb.size);
-                    bb.append('put some nice text in our file....');
-                    var ourData = bb.getBlob('text/plain');
-                    fileWriter.write(ourData);
-                }, errorHandler);
-            }, errorHandler);
-
-        }
-
-    });
+});
+    

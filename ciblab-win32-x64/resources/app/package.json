@@ -1,0 +1,30 @@
+{
+  "name": "ciblab",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "web": "webpack"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^5.0.6",
+    "electron-packager": "^14.0.1",
+    "minimist": "^1.2.0",
+    "webpack-target-electron-renderer": "^0.4.0"
+  },
+  "dependencies": {
+    "@angular/cli": "^1.7.4",
+    "electron-reload": "^1.4.0"
+  }
+}

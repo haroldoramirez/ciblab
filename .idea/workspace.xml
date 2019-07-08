@@ -3,25 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30606d62-c289-4047-8b7c-c3fc877e973f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/controllers/cadastro.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/controllers/cadastro.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/services/address.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/services/address.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/views/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/views/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/arquivo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/arquivo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/gera_valores.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/gera_valores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/habilita_input.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/habilita_input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/lista_select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/lista_select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/monta_vetor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/monta_vetor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/preenche_selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/preenche_selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/streamsaver.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/streamsaver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/valida_campos_numero.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/valida_campos_numero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/valida_campos_select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/valida_campos_select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/renderer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,31 +15,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="57" lean-forward="true" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/controllers/cadastro.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="61" column="70" selection-start-line="61" selection-start-column="70" selection-end-line="61" selection-end-column="70" />
+            <state relative-caret-position="315">
+              <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
               <folding>
-                <element signature="e#0#5587#0" />
-                <element signature="e#0#2717#0" />
-                <element signature="e#0#2717#0" />
-                <element signature="e#0#2717#0" />
-                <element signature="e#0#2717#0" />
+                <element signature="e#0#6831#0" />
+                <element signature="e#0#7182#0" />
+                <element signature="e#0#5847#0" />
+                <element signature="e#0#5847#0" />
+                <element signature="e#0#5847#0" />
+                <element signature="e#0#5847#0" />
               </folding>
             </state>
           </provider>
@@ -64,13 +39,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/views/cadastro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="71" />
+            <state relative-caret-position="430">
+              <caret line="54" column="72" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>path</find>
+      <find>Teste de Conteudo</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,11 +75,13 @@
         <option value="$PROJECT_DIR$/public/javascripts/valida_campos_numero.js" />
         <option value="$PROJECT_DIR$/public/javascripts/valida_campos_select.js" />
         <option value="$PROJECT_DIR$/renderer.js" />
+        <option value="$PROJECT_DIR$/preload.js" />
         <option value="$PROJECT_DIR$/public/app/controllers/cadastro.controller.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="65" />
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
@@ -107,13 +90,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ciblab" type="b2602c69:ProjectViewProjectNode" />
               <item name="ciblab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ciblab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ciblab" type="462c0819:PsiDirectoryNode" />
+              <item name="electron-quick-start-win32-x64" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ciblab" type="b2602c69:ProjectViewProjectNode" />
@@ -157,7 +145,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,7 +200,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25773746" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26947704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -226,7 +214,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23220153" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20481928" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -240,23 +228,10 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ciblab.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preload.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/app.js">
@@ -274,34 +249,13 @@
         <state relative-caret-position="-2768" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/arquivo.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controller.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/gera_valores.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/habilita_input.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/valida_campos_numero.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/valida_campos_select.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/lista_select.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/monta_vetor.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/sw.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/streamsaver.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/renderer.js">
@@ -323,23 +277,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/gera_valores.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/habilita_input.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/lista_select.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/streamsaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1953" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/arquivo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/sw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/views/cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="71" />
+        <state relative-caret-position="430">
+          <caret line="54" column="72" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/controllers/cadastro.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="61" column="70" selection-start-line="61" selection-start-column="70" selection-end-line="61" selection-end-column="70" />
+        <state relative-caret-position="315">
+          <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
           <folding>
-            <element signature="e#0#5587#0" />
-            <element signature="e#0#2717#0" />
-            <element signature="e#0#2717#0" />
-            <element signature="e#0#2717#0" />
-            <element signature="e#0#2717#0" />
+            <element signature="e#0#6831#0" />
+            <element signature="e#0#7182#0" />
+            <element signature="e#0#5847#0" />
+            <element signature="e#0#5847#0" />
+            <element signature="e#0#5847#0" />
+            <element signature="e#0#5847#0" />
           </folding>
         </state>
       </provider>
